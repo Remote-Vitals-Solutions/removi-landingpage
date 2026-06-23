@@ -9,7 +9,7 @@ const geist = Geist({
 
 export const metadata: Metadata = {
   title: "Removi – Remote Vitals Solutions",
-  description: "Kontinuerlig EKG-monitorering på håndleddet. Removi muliggør detektion af atrieflimren og remote monitorering af hjemmeindlagte patienter.",
+  description: "Continuous wrist-worn ECG monitoring. Removi enables early detection of atrial fibrillation and remote cardiac monitoring of home-hospitalised patients.",
 };
 
 export default function RootLayout({
@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="da" className={`${geist.variable} h-full antialiased`}>
+    <html lang="en" className={`${geist.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
