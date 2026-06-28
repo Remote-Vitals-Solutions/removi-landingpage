@@ -46,7 +46,7 @@ function Hero() {
       <div className="max-w-3xl flex flex-col items-center gap-7">
         <AnimateIn direction="fade" delay={0}>
           <p className="text-xs font-medium uppercase tracking-[0.18em]" style={{ color: '#27B9B6' }}>
-            Remote Vital Care
+            Remote Vitals Care
           </p>
         </AnimateIn>
         <AnimateIn direction="up" delay={100}>
