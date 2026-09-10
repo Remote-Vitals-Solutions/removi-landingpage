@@ -52,7 +52,7 @@ function Hero() {
         <AnimateIn direction="up" delay={100}>
           <h1 className="text-5xl md:text-7xl font-bold leading-tight tracking-tight" style={{ color: '#1d1d1f' }}>
             The heart,<br />
-            <span style={{ color: '#27B9B6' }}>monitored continuously.</span>
+            <span style={{ color: '#27B9B6' }}>monitored continuously. Test</span>
           </h1>
         </AnimateIn>
         <AnimateIn direction="up" delay={200}>
