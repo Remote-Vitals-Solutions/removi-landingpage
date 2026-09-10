@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Removi – Landing Page
 
-## Getting Started
+Marketing site for **Removi** (Remote Vitals Solutions), a health-tech startup out of
+DTU (Technical University of Denmark) building a wrist-worn continuous ECG wearable
+for detecting atrial fibrillation outside the clinic.
 
-First, run the development server:
+## Tech stack
+
+- [Next.js 16](https://nextjs.org) (App Router, Turbopack)
+- React 19
+- Tailwind CSS v4
+- TypeScript
+- Deployed on [Vercel](https://vercel.com)
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the dev server |
+| `npm run build` | Production build |
+| `npm run start` | Serve the production build |
+| `npm run lint` | Run ESLint |
 
-## Learn More
+## Project structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+app/
+  layout.tsx              Root layout, fonts, metadata
+  page.tsx                Single-page scroll layout
+  globals.css             Tailwind theme + design tokens
+  components/
+    Navbar.tsx            Logo + contact CTA
+    AnimateIn.tsx         Scroll-reveal wrapper
+    StickyProduct.tsx     Sticky product visualisation
+    Forms.tsx             Contact / waitlist form
+public/                   Static assets
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The site is a single linear scroll — hero, problem, product, team, partners — with no
+section navigation in the navbar by design.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Contributing
 
-## Deploy on Vercel
+See [`AGENTS.md`](./AGENTS.md) for conventions. Note that this project tracks a recent
+Next.js release; check `node_modules/next/dist/docs/` rather than relying on older
+Next.js knowledge.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+See [`LICENSE`](./LICENSE). All rights reserved.

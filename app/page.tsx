@@ -157,7 +157,7 @@ function Product() {
             Continuous ECG. Wrist-worn. Clinically actionable.
           </h2>
           <p className="leading-relaxed max-w-xl text-base" style={{ color: '#6e6e73' }}>
-            Removi's device captures ECG data continuously and streams it securely to
+            Removi&rsquo;s device captures ECG data continuously and streams it securely to
             clinical staff — enabling remote monitoring and automated arrhythmia detection.
           </p>
         </AnimateIn>
@@ -423,7 +423,7 @@ function Partners() {
                 />
                 <div className="text-left">
                   <p className="font-semibold text-sm" style={{ color: '#1d1d1f' }}>DTU Skylab</p>
-                  <p className="text-xs mt-0.5" style={{ color: '#6e6e73' }}>DTU's Innovation Hub</p>
+                  <p className="text-xs mt-0.5" style={{ color: '#6e6e73' }}>DTU&rsquo;s Innovation Hub</p>
                 </div>
               </div>
             </div>
