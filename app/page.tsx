@@ -1,8 +1,16 @@
-import Image from 'next/image';
+import Image, { type StaticImageData } from 'next/image';
 import AnimateIn from './components/AnimateIn';
 import StickyProduct from './components/StickyProduct';
 import Navbar from './components/Navbar';
 import { ContactForm, Newsletter } from './components/Forms';
+import { applications } from './applications';
+import wordmark from '../public/logo-wordmark.png';
+import asgerPhoto from '../public/team/asger.png';
+import rasmusPhoto from '../public/team/rasmus.png';
+import madsPhoto from '../public/team/mads.jpg';
+import christianPhoto from '../public/team/christian.png';
+import dtuSkylabLogo from '../public/partners/dtu-skylab.png';
+import tuhLogo from '../public/partners/tuh.jpg';
 
 const LINKEDIN = {
   company: 'https://www.linkedin.com/company/removi/',
@@ -25,7 +33,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <Problem />
+        <Vision />
         <Product />
         <Technology />
         <Team />
@@ -52,7 +60,7 @@ function Hero() {
         <AnimateIn direction="up" delay={100}>
           <h1 className="text-5xl md:text-7xl font-bold leading-tight tracking-tight" style={{ color: '#1d1d1f' }}>
             The heart,<br />
-            <span style={{ color: '#27B9B6' }}>monitored continuously. Test AV</span>
+            <span style={{ color: '#27B9B6' }}>monitored continuously.</span>
           </h1>
         </AnimateIn>
         <AnimateIn direction="up" delay={200}>
@@ -61,7 +69,13 @@ function Hero() {
             and early detection of atrial fibrillation — wherever the patient is.
           </p>
         </AnimateIn>
-        <AnimateIn direction="up" delay={320}>
+        <AnimateIn direction="up" delay={280}>
+          <p className="text-sm max-w-md" style={{ color: '#6e6e73' }}>
+            In nearly 1 in 5 stroke patients, atrial fibrillation is only discovered
+            during the hospitalisation that follows.
+          </p>
+        </AnimateIn>
+        <AnimateIn direction="up" delay={360}>
           <a
             href="#contact"
             className="mt-2 px-9 py-3.5 rounded-full font-medium text-sm text-white transition-opacity hover:opacity-80"
@@ -70,7 +84,7 @@ function Hero() {
             Get in touch
           </a>
         </AnimateIn>
-        <AnimateIn direction="fade" delay={500} className="mt-16 w-full max-w-2xl">
+        <AnimateIn direction="fade" delay={520} className="mt-16 w-full max-w-2xl">
           <div style={{ opacity: 0.15 }}>
             <EkgLine />
           </div>
@@ -95,51 +109,25 @@ function EkgLine() {
   );
 }
 
-function Problem() {
+function Vision() {
   return (
     <section className="py-32 px-6" style={{ backgroundColor: '#f5f5f7' }}>
-      <div className="max-w-5xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-16 items-start">
-          <div>
-            <AnimateIn direction="left">
-              <p className="text-xs font-medium uppercase tracking-[0.18em] mb-6" style={{ color: '#27B9B6' }}>
-                The problem
-              </p>
-              <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-6" style={{ color: '#1d1d1f' }}>
-                Atrial fibrillation is the silent epidemic of cardiology.
-              </h2>
-              <p className="leading-relaxed mb-4 text-base" style={{ color: '#6e6e73' }}>
-                AFib is the most common cardiac arrhythmia — and one of the leading causes of stroke.
-                The challenge: it is episodic. Patients are asymptomatic during clinical visits,
-                yet experience dangerous episodes at home.
-              </p>
-              <p className="leading-relaxed text-base" style={{ color: '#6e6e73' }}>
-                Current diagnostic tools require scheduled appointments and short monitoring windows.
-                Meanwhile, hospitals face increasing pressure to discharge patients earlier —
-                creating a growing population of home-hospitalized patients who need continuous care.
-              </p>
-            </AnimateIn>
-          </div>
-          <div className="flex flex-col gap-4">
-            {[
-              { stat: '~30%', label: 'of strokes are caused by undetected atrial fibrillation', delay: 0 },
-              { stat: '1 in 3', label: 'people over 55 will develop AFib in their lifetime', delay: 100 },
-              { stat: '72h', label: 'maximum current standard ECG monitoring window', delay: 200 },
-            ].map((item) => (
-              <AnimateIn key={item.stat} direction="right" delay={item.delay}>
-                <div
-                  className="p-7 rounded-2xl bg-white"
-                  style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}
-                >
-                  <div className="text-3xl font-bold mb-1.5" style={{ color: '#27B9B6' }}>
-                    {item.stat}
-                  </div>
-                  <p className="text-sm" style={{ color: '#6e6e73' }}>{item.label}</p>
-                </div>
-              </AnimateIn>
-            ))}
-          </div>
-        </div>
+      <div className="max-w-3xl mx-auto text-center">
+        <AnimateIn direction="up">
+          <p className="text-xs font-medium uppercase tracking-[0.18em] mb-6" style={{ color: '#27B9B6' }}>
+            Vision
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-6" style={{ color: '#1d1d1f' }}>
+            Remote monitoring for the conditions that matter most.
+          </h2>
+          <p className="leading-relaxed text-base" style={{ color: '#6e6e73' }}>
+            Right now, we&rsquo;re focused on detecting atrial fibrillation — one of the most
+            common cardiac arrhythmias, and one that often goes unnoticed until real damage
+            is done. It&rsquo;s where we start, not where we stop: our long-term aim is remote
+            monitoring and diagnostics for the critical conditions that shape people&rsquo;s
+            lives, wherever they are.
+          </p>
+        </AnimateIn>
       </div>
     </section>
   );
@@ -163,7 +151,91 @@ function Product() {
         </AnimateIn>
       </div>
       <StickyProduct />
+      <Applications />
     </section>
+  );
+}
+
+function Applications() {
+  return (
+    <div id="applications" className="scroll-mt-24 max-w-5xl mx-auto mt-32">
+      <AnimateIn direction="up">
+        <p className="text-xs font-medium uppercase tracking-[0.18em] mb-6" style={{ color: '#27B9B6' }}>
+          Applications
+        </p>
+        <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-4 max-w-2xl" style={{ color: '#1d1d1f' }}>
+          One wearable, two clinical settings.
+        </h2>
+        <p className="leading-relaxed max-w-xl mb-16 text-base" style={{ color: '#6e6e73' }}>
+          At its core, Removi is a remote monitoring device: two wristbands that follow the
+          patient continuously, wherever they are. The same device serves different clinical needs.
+        </p>
+      </AnimateIn>
+      <div className="grid md:grid-cols-2 gap-6">
+        {applications.map((app, i) => (
+          <AnimateIn key={app.id} direction="up" delay={i * 100}>
+            <article
+              id={app.id}
+              className="scroll-mt-28 h-full rounded-3xl p-8 md:p-10 flex flex-col gap-5"
+              style={{ backgroundColor: '#f5f5f7' }}
+            >
+              <div className="flex items-center gap-4">
+                <ApplicationIcon kind={app.icon} />
+                <span
+                  className="text-xs font-medium px-3 py-1 rounded-full bg-white"
+                  style={{ color: '#27B9B6' }}
+                >
+                  {app.tag}
+                </span>
+              </div>
+              <h3 className="text-2xl font-bold leading-snug" style={{ color: '#1d1d1f' }}>{app.title}</h3>
+              <p className="text-base leading-relaxed" style={{ color: '#6e6e73' }}>{app.body}</p>
+              <ul className="mt-auto pt-2 flex flex-col gap-2.5">
+                {app.points.map((point) => (
+                  <li key={point} className="flex items-start gap-3 text-sm" style={{ color: '#1d1d1f' }}>
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: '#27B9B6' }} />
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          </AnimateIn>
+        ))}
+      </div>
+      <p className="text-xs mt-10" style={{ color: '#6e6e73' }}>
+        Removi is in development. Intended uses are subject to clinical validation and regulatory approval.
+      </p>
+    </div>
+  );
+}
+
+function ApplicationIcon({ kind }: { kind: 'ecg' | 'home' }) {
+  return (
+    <div
+      className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center shrink-0"
+      style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}
+    >
+      <svg
+        viewBox="0 0 24 24"
+        className="w-6 h-6"
+        fill="none"
+        stroke="#27B9B6"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        {kind === 'ecg' ? (
+          <path d="M2 12h4l2-5 3 10 3-8 2 3h6" />
+        ) : (
+          <>
+            <path d="M3 11.5 12 4l9 7.5" />
+            <path d="M5 10v10h14V10" />
+            <path d="M8 15h2l1-2 2 4 1-2h2" />
+          </>
+        )}
+      </svg>
+    </div>
   );
 }
 
@@ -241,24 +313,41 @@ function Technology() {
   );
 }
 
-const team = [
+type TeamMember = {
+  name: string;
+  role: string;
+  tag: string;
+  photo: StaticImageData;
+  linkedin?: string;
+};
+
+const team: TeamMember[] = [
   {
     name: 'Asger Villadsen',
-    role: 'MSc. Mechanical Engineer',
+    role: 'Mechanical Engineer',
     tag: 'Founder',
+    photo: asgerPhoto,
     linkedin: LINKEDIN.asger,
   },
   {
     name: 'Rasmus Nørgaard',
-    role: 'MSc. Biomedical Engineer',
+    role: 'Biomedical Engineer',
     tag: 'Founder',
+    photo: rasmusPhoto,
     linkedin: LINKEDIN.rasmus,
   },
   {
     name: 'Mads Tofte Gregers',
-    role: 'PhD · Medical Health Advisor',
+    role: 'Anaesthesiologist, PhD',
     tag: 'Advisor',
+    photo: madsPhoto,
     linkedin: LINKEDIN.mads,
+  },
+  {
+    name: 'Christian Jøns',
+    role: 'Electrophysiologist, PhD',
+    tag: 'Advisor',
+    photo: christianPhoto,
   },
 ];
 
@@ -278,19 +367,20 @@ function Team() {
             combining expertise in medical technology, software engineering, and healthcare systems.
           </p>
         </AnimateIn>
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {team.map((person, i) => (
             <AnimateIn key={person.name} direction="up" delay={i * 100}>
               <div
-                className="rounded-3xl p-8 bg-white flex flex-col items-center text-center gap-4"
+                className="h-full rounded-3xl p-6 bg-white flex flex-col items-center text-center gap-4"
                 style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}
               >
-                <div
-                  className="w-16 h-16 rounded-full flex items-center justify-center text-white text-lg font-semibold"
-                  style={{ backgroundColor: '#27B9B6' }}
-                >
-                  {person.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
-                </div>
+                <Image
+                  src={person.photo}
+                  alt={person.name}
+                  width={64}
+                  height={64}
+                  className="w-16 h-16 rounded-full object-cover"
+                />
                 <div>
                   <p className="font-semibold text-base" style={{ color: '#1d1d1f' }}>{person.name}</p>
                   <p className="text-sm mt-1" style={{ color: '#6e6e73' }}>{person.role}</p>
@@ -324,7 +414,7 @@ function Team() {
 
 const news = [
   {
-    date: 'June 2026',
+    date: 'September 2026',
     tag: 'Milestone',
     title: 'Removi joins DTU Skylab',
     body: 'We have moved into DTU Skylab, DTU’s innovation hub, to accelerate development of our wrist-worn ECG device.',
@@ -385,6 +475,11 @@ function News() {
   );
 }
 
+const partners = [
+  { name: 'DTU Skylab', description: 'DTU’s Innovation Hub', logo: dtuSkylabLogo },
+  { name: 'TUH', description: 'Technical University Hospital', logo: tuhLogo },
+];
+
 function Partners() {
   return (
     <section id="contact" className="scroll-mt-24 py-32 px-6 bg-white">
@@ -409,23 +504,26 @@ function Partners() {
             style={{ backgroundColor: '#f5f5f7' }}
           >
             <p className="text-xs uppercase tracking-widest mb-10 text-center" style={{ color: '#6e6e73' }}>Partners</p>
-            <div className="flex flex-wrap justify-center items-center gap-10">
-              <div
-                className="bg-white rounded-2xl px-8 py-6 flex items-center gap-4"
-                style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.06)', minWidth: '180px' }}
-              >
-                <Image
-                  src="/dtu-skylab.png"
-                  alt="DTU Skylab"
-                  width={56}
-                  height={56}
-                  className="object-contain rounded-xl"
-                />
-                <div className="text-left">
-                  <p className="font-semibold text-sm" style={{ color: '#1d1d1f' }}>DTU Skylab</p>
-                  <p className="text-xs mt-0.5" style={{ color: '#6e6e73' }}>DTU&rsquo;s Innovation Hub</p>
+            <div className="flex flex-wrap justify-center items-center gap-6">
+              {partners.map((partner) => (
+                <div
+                  key={partner.name}
+                  className="bg-white rounded-2xl px-8 py-6 flex items-center gap-4"
+                  style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.06)', minWidth: '180px' }}
+                >
+                  <Image
+                    src={partner.logo}
+                    alt={partner.name}
+                    width={56}
+                    height={56}
+                    className="object-contain rounded-xl"
+                  />
+                  <div className="text-left">
+                    <p className="font-semibold text-sm" style={{ color: '#1d1d1f' }}>{partner.name}</p>
+                    <p className="text-xs mt-0.5" style={{ color: '#6e6e73' }}>{partner.description}</p>
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
         </AnimateIn>
@@ -466,7 +564,7 @@ function Footer() {
   return (
     <footer className="py-8 px-6 border-t border-[#e8e8ed]">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-3 text-xs" style={{ color: '#6e6e73' }}>
-        <span className="font-semibold" style={{ color: '#1d1d1f' }}>Removi</span>
+        <Image src={wordmark} alt="Removi" className="h-6 w-auto" />
         <span>Remote Vitals Solutions</span>
         <div className="flex items-center gap-4">
           <a
