@@ -6,7 +6,7 @@ import { ContactForm, Newsletter } from './components/Forms';
 import { applications } from './applications';
 import wordmark from '../public/logo-wordmark.png';
 import asgerPhoto from '../public/team/asger.png';
-import rasmusPhoto from '../public/team/rasmus.png';
+import nicolaiPhoto from '../public/team/nicolai.jpeg';
 import madsPhoto from '../public/team/mads.jpg';
 import christianPhoto from '../public/team/christian.png';
 import dtuSkylabLogo from '../public/partners/dtu-skylab.png';
@@ -15,7 +15,7 @@ import tuhLogo from '../public/partners/tuh.jpg';
 const LINKEDIN = {
   company: 'https://www.linkedin.com/company/removi/',
   asger: 'https://www.linkedin.com/in/asger-hannibal-villadsen-858494161',
-  rasmus: 'https://www.linkedin.com/in/rasmus-faber-nørgaard-aa3043279',
+  nicolai: 'https://www.linkedin.com/in/nicolai-ehlers-mikkelsen/',
   mads: 'https://www.linkedin.com/in/mads-christian-tofte-gregers-22061919',
 };
 
@@ -330,11 +330,11 @@ const team: TeamMember[] = [
     linkedin: LINKEDIN.asger,
   },
   {
-    name: 'Rasmus Nørgaard',
-    role: 'Biomedical Engineer',
+    name: 'Nicolai Ehlers Mikkelsen',
+    role: 'BSc Biomedical engineering, Masters Autonomous systems',
     tag: 'Founder',
-    photo: rasmusPhoto,
-    linkedin: LINKEDIN.rasmus,
+    photo: nicolaiPhoto,
+    linkedin: LINKEDIN.nicolai,
   },
   {
     name: 'Mads Tofte Gregers',
