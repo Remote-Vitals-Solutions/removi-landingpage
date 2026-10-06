@@ -6,7 +6,7 @@ import { useState } from 'react';
 // Create a free form at https://formspree.io and paste the ID below.
 // Both the contact form and the newsletter post here; a hidden "form-type"
 // field tells them apart in your inbox.
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xrpeeqzj';
 
 const isConfigured = !FORMSPREE_ENDPOINT.includes('YOUR_FORM_ID');
 
