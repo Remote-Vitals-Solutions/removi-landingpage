@@ -2,11 +2,7 @@
 
 import { useState } from 'react';
 
-// TODO: Replace with your Formspree endpoint, e.g. 'https://formspree.io/f/abcdwxyz'.
-// Create a free form at https://formspree.io and paste the ID below.
-// Both the contact form and the newsletter post here; a hidden "form-type"
-// field tells them apart in your inbox.
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xrpeeqzj';
 
 const isConfigured = !FORMSPREE_ENDPOINT.includes('YOUR_FORM_ID');
 
@@ -55,7 +51,6 @@ export function ContactForm() {
 
   return (
     <form onSubmit={onSubmit} className="max-w-xl flex flex-col gap-4">
-      <input type="hidden" name="form-type" value="contact" />
       <input type="hidden" name="_subject" value="New Removi contact" />
       <div className="grid sm:grid-cols-2 gap-4">
         <Field name="name" label="Name" required />
@@ -91,66 +86,6 @@ export function ContactForm() {
         )}
       </div>
     </form>
-  );
-}
-
-export function Newsletter() {
-  const [status, setStatus] = useState<Status>('idle');
-
-  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setStatus('submitting');
-    const ok = await postToFormspree(new FormData(e.currentTarget));
-    setStatus(ok ? 'success' : 'error');
-    if (ok) e.currentTarget.reset();
-  }
-
-  return (
-    <section id="newsletter" className="scroll-mt-24 py-20 px-6" style={{ backgroundColor: '#f5f5f7' }}>
-      <div className="max-w-2xl mx-auto text-center">
-        <p className="text-xs font-medium uppercase tracking-[0.18em] mb-5" style={{ color: '#27B9B6' }}>
-          Stay in the loop
-        </p>
-        <h2 className="text-2xl md:text-3xl font-bold leading-tight mb-4" style={{ color: '#1d1d1f' }}>
-          Keep me updated.
-        </h2>
-        <p className="leading-relaxed text-sm md:text-base mb-8" style={{ color: '#6e6e73' }}>
-          Get occasional updates on our progress toward continuous cardiac monitoring — no spam.
-        </p>
-
-        {status === 'success' ? (
-          <p className="font-medium text-base" style={{ color: '#27B9B6' }}>
-            You&apos;re on the list — thank you.
-          </p>
-        ) : (
-          <form onSubmit={onSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-            <input type="hidden" name="form-type" value="newsletter" />
-            <input type="hidden" name="_subject" value="New Removi newsletter signup" />
-            <input
-              type="email"
-              name="email"
-              required
-              placeholder="your@email.com"
-              className="flex-1 rounded-full px-5 py-3 text-sm bg-white border outline-none transition-colors focus:border-[#27B9B6]"
-              style={{ borderColor: '#e8e8ed', color: '#1d1d1f' }}
-            />
-            <button
-              type="submit"
-              disabled={status === 'submitting'}
-              className="px-7 py-3 rounded-full font-medium text-sm text-white transition-opacity hover:opacity-80 disabled:opacity-50 whitespace-nowrap"
-              style={{ backgroundColor: '#27B9B6' }}
-            >
-              {status === 'submitting' ? 'Joining…' : 'Keep me updated'}
-            </button>
-          </form>
-        )}
-        {status === 'error' && (
-          <p className="text-sm mt-3" style={{ color: '#E151B2' }}>
-            Something went wrong. Please try again.
-          </p>
-        )}
-      </div>
-    </section>
   );
 }
 

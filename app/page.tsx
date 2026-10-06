@@ -2,7 +2,7 @@ import Image, { type StaticImageData } from 'next/image';
 import AnimateIn from './components/AnimateIn';
 import StickyProduct from './components/StickyProduct';
 import Navbar from './components/Navbar';
-import { ContactForm, Newsletter } from './components/Forms';
+import { ContactForm } from './components/Forms';
 import { applications } from './applications';
 import wordmark from '../public/logo-wordmark.png';
 import asgerPhoto from '../public/team/asger.png';
@@ -39,7 +39,6 @@ export default function Home() {
         <Team />
         <News />
         <Partners />
-        <Newsletter />
         <Regulatory />
       </main>
       <Footer />
@@ -319,6 +318,7 @@ type TeamMember = {
   tag: string;
   photo: StaticImageData;
   linkedin?: string;
+  email?: string;
 };
 
 const team: TeamMember[] = [
@@ -328,6 +328,7 @@ const team: TeamMember[] = [
     tag: 'Founder',
     photo: asgerPhoto,
     linkedin: LINKEDIN.asger,
+    email: 'Asger.villadsen@removi.dk',
   },
   {
     name: 'Nicolai Ehlers Mikkelsen',
@@ -335,6 +336,7 @@ const team: TeamMember[] = [
     tag: 'Founder',
     photo: nicolaiPhoto,
     linkedin: LINKEDIN.nicolai,
+    email: 'Nicolai.mikkelsen@removi.dk',
   },
   {
     name: 'Mads Tofte Gregers',
@@ -384,6 +386,15 @@ function Team() {
                 <div>
                   <p className="font-semibold text-base" style={{ color: '#1d1d1f' }}>{person.name}</p>
                   <p className="text-sm mt-1" style={{ color: '#6e6e73' }}>{person.role}</p>
+                  {person.email && (
+                    <a
+                      href={`mailto:${person.email}`}
+                      className="text-sm mt-2 inline-block break-all transition-opacity hover:opacity-60"
+                      style={{ color: '#27B9B6' }}
+                    >
+                      {person.email}
+                    </a>
+                  )}
                 </div>
                 <span
                   className="text-xs font-medium px-3 py-1 rounded-full"
