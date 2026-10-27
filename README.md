@@ -10,7 +10,7 @@ for detecting atrial fibrillation outside the clinic.
 - React 19
 - Tailwind CSS v4
 - TypeScript
-- Deployed on [Vercel](https://vercel.com)
+- Deployed on [Cloudflare Workers](https://workers.cloudflare.com) (static export, see `wrangler.jsonc`)
 
 ## Getting started
 
