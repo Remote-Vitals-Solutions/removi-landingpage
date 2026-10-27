@@ -8,6 +8,7 @@ import wordmark from '../public/logo-wordmark.png';
 import asgerPhoto from '../public/team/asger.png';
 import nicolaiPhoto from '../public/team/nicolai.jpeg';
 import madsPhoto from '../public/team/mads.jpg';
+import madsOlsenPhoto from '../public/team/mads-olsen.jpg';
 import christianPhoto from '../public/team/christian.png';
 import dtuSkylabLogo from '../public/partners/dtu-skylab.png';
 import tuhLogo from '../public/partners/tuh.jpg';
@@ -17,6 +18,7 @@ const LINKEDIN = {
   asger: 'https://www.linkedin.com/in/asger-hannibal-villadsen-858494161',
   nicolai: 'https://www.linkedin.com/in/nicolai-ehlers-mikkelsen/',
   mads: 'https://www.linkedin.com/in/mads-christian-tofte-gregers-22061919',
+  madsOlsen: 'https://www.linkedin.com/in/mads-olsen-2318942bb/',
 };
 
 function LinkedInIcon({ className = '' }: { className?: string }) {
@@ -321,11 +323,11 @@ type TeamMember = {
   email?: string;
 };
 
-const team: TeamMember[] = [
+const founders: TeamMember[] = [
   {
     name: 'Asger Villadsen',
     role: 'Mechanical Engineer',
-    tag: 'Founder',
+    tag: 'Co-founder',
     photo: asgerPhoto,
     linkedin: LINKEDIN.asger,
     email: 'Asger.villadsen@removi.dk',
@@ -333,11 +335,21 @@ const team: TeamMember[] = [
   {
     name: 'Nicolai Ehlers Mikkelsen',
     role: 'BSc Biomedical engineering, Masters Autonomous systems',
-    tag: 'Founder',
+    tag: 'Co-founder',
     photo: nicolaiPhoto,
     linkedin: LINKEDIN.nicolai,
     email: 'Nicolai.mikkelsen@removi.dk',
   },
+  {
+    name: 'Mads Olsen',
+    role: '',
+    tag: 'Co-founder',
+    photo: madsOlsenPhoto,
+    linkedin: LINKEDIN.madsOlsen,
+  },
+];
+
+const advisors: TeamMember[] = [
   {
     name: 'Mads Tofte Gregers',
     role: 'Anaesthesiologist, PhD',
@@ -352,6 +364,77 @@ const team: TeamMember[] = [
     photo: christianPhoto,
   },
 ];
+
+function TeamCard({ person }: { person: TeamMember }) {
+  return (
+    <div
+      className="h-full rounded-3xl p-6 bg-white flex flex-col items-center text-center gap-4"
+      style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}
+    >
+      <Image
+        src={person.photo}
+        alt={person.name}
+        width={64}
+        height={64}
+        className="w-16 h-16 rounded-full object-cover"
+      />
+      <div>
+        <p className="font-semibold text-base" style={{ color: '#1d1d1f' }}>{person.name}</p>
+        {person.role && (
+          <p className="text-sm mt-1" style={{ color: '#6e6e73' }}>{person.role}</p>
+        )}
+      </div>
+      <span
+        className="text-xs font-medium px-3 py-1 rounded-full"
+        style={{ backgroundColor: '#27B9B615', color: '#27B9B6' }}
+      >
+        {person.tag}
+      </span>
+      {(person.linkedin || person.email) && (
+        <div className="flex items-center justify-center gap-2 mt-auto">
+          {person.linkedin && (
+            <a
+              href={person.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${person.name} on LinkedIn`}
+              className="transition-opacity hover:opacity-60 shrink-0"
+              style={{ color: '#6e6e73' }}
+            >
+              <LinkedInIcon className="w-5 h-5" />
+            </a>
+          )}
+          {person.email && (
+            <a
+              href={`mailto:${person.email}`}
+              className="text-sm break-all transition-opacity hover:opacity-60"
+              style={{ color: '#000000' }}
+            >
+              {person.email}
+            </a>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function TeamGroup({ title, members, columns }: { title: string; members: TeamMember[]; columns: string }) {
+  return (
+    <div className="rounded-3xl p-6 md:p-8" style={{ backgroundColor: '#f5f5f7' }}>
+      <p className="text-xs uppercase tracking-widest mb-6 text-center" style={{ color: '#6e6e73' }}>
+        {title}
+      </p>
+      <div className={`grid gap-6 ${columns}`}>
+        {members.map((person, i) => (
+          <AnimateIn key={person.name} direction="up" delay={i * 100}>
+            <TeamCard person={person} />
+          </AnimateIn>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 function Team() {
   return (
@@ -369,54 +452,9 @@ function Team() {
             combining expertise in medical technology, software engineering, and healthcare systems.
           </p>
         </AnimateIn>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {team.map((person, i) => (
-            <AnimateIn key={person.name} direction="up" delay={i * 100}>
-              <div
-                className="h-full rounded-3xl p-6 bg-white flex flex-col items-center text-center gap-4"
-                style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}
-              >
-                <Image
-                  src={person.photo}
-                  alt={person.name}
-                  width={64}
-                  height={64}
-                  className="w-16 h-16 rounded-full object-cover"
-                />
-                <div>
-                  <p className="font-semibold text-base" style={{ color: '#1d1d1f' }}>{person.name}</p>
-                  <p className="text-sm mt-1" style={{ color: '#6e6e73' }}>{person.role}</p>
-                  {person.email && (
-                    <a
-                      href={`mailto:${person.email}`}
-                      className="text-sm mt-2 inline-block break-all transition-opacity hover:opacity-60"
-                      style={{ color: '#27B9B6' }}
-                    >
-                      {person.email}
-                    </a>
-                  )}
-                </div>
-                <span
-                  className="text-xs font-medium px-3 py-1 rounded-full"
-                  style={{ backgroundColor: '#27B9B615', color: '#27B9B6' }}
-                >
-                  {person.tag}
-                </span>
-                {person.linkedin && (
-                  <a
-                    href={person.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${person.name} on LinkedIn`}
-                    className="transition-opacity hover:opacity-60"
-                    style={{ color: '#6e6e73' }}
-                  >
-                    <LinkedInIcon className="w-5 h-5" />
-                  </a>
-                )}
-              </div>
-            </AnimateIn>
-          ))}
+        <div className="flex flex-col gap-6">
+          <TeamGroup title="Founders" members={founders} columns="sm:grid-cols-2 lg:grid-cols-3" />
+          <TeamGroup title="Advisors" members={advisors} columns="sm:grid-cols-2 lg:max-w-2xl lg:mx-auto lg:w-full" />
         </div>
       </div>
     </section>
