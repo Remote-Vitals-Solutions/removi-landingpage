@@ -342,10 +342,11 @@ const founders: TeamMember[] = [
   },
   {
     name: 'Mads Olsen',
-    role: '',
+    role: 'BSc Mechanical engineering',
     tag: 'Co-founder',
     photo: madsOlsenPhoto,
     linkedin: LINKEDIN.madsOlsen,
+    email: 'mads.olsen@removi.dk',
   },
 ];
 
@@ -368,9 +369,21 @@ const advisors: TeamMember[] = [
 function TeamCard({ person }: { person: TeamMember }) {
   return (
     <div
-      className="h-full rounded-3xl p-6 bg-white flex flex-col items-center text-center gap-4"
+      className="relative h-full rounded-3xl p-6 bg-white flex flex-col items-center text-center gap-4"
       style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}
     >
+      {person.linkedin && (
+        <a
+          href={person.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${person.name} on LinkedIn`}
+          className="absolute top-4 left-4 transition-opacity hover:opacity-60"
+          style={{ color: '#6e6e73' }}
+        >
+          <LinkedInIcon className="w-5 h-5" />
+        </a>
+      )}
       <Image
         src={person.photo}
         alt={person.name}
@@ -390,30 +403,14 @@ function TeamCard({ person }: { person: TeamMember }) {
       >
         {person.tag}
       </span>
-      {(person.linkedin || person.email) && (
-        <div className="flex items-center justify-center gap-2 mt-auto">
-          {person.linkedin && (
-            <a
-              href={person.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`${person.name} on LinkedIn`}
-              className="transition-opacity hover:opacity-60 shrink-0"
-              style={{ color: '#6e6e73' }}
-            >
-              <LinkedInIcon className="w-5 h-5" />
-            </a>
-          )}
-          {person.email && (
-            <a
-              href={`mailto:${person.email}`}
-              className="text-sm break-all transition-opacity hover:opacity-60"
-              style={{ color: '#000000' }}
-            >
-              {person.email}
-            </a>
-          )}
-        </div>
+      {person.email && (
+        <a
+          href={`mailto:${person.email}`}
+          className="mt-auto text-sm break-all transition-opacity hover:opacity-60"
+          style={{ color: '#000000' }}
+        >
+          {person.email}
+        </a>
       )}
     </div>
   );
