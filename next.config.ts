@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Static HTML export to ./out, served as static assets by Cloudflare Workers (see wrangler.jsonc) and Vercel.
+  // Static HTML export to ./out, served as static assets by Cloudflare Workers (see wrangler.jsonc).
   output: "export",
   // The default image loader needs a server; serve images as-is instead.
   images: { unoptimized: true },
