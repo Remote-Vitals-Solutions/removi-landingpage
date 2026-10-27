@@ -389,7 +389,7 @@ function TeamCard({ person }: { person: TeamMember }) {
         alt={person.name}
         width={64}
         height={64}
-        className="w-16 h-16 rounded-full object-cover"
+        className="w-16 h-16 rounded-full object-cover border-2 border-black"
       />
       <div>
         <p className="font-semibold text-base" style={{ color: '#1d1d1f' }}>{person.name}</p>
