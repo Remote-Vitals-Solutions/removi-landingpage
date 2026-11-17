@@ -37,12 +37,12 @@ export function ContactForm() {
     return (
       <div
         className="rounded-3xl p-8 bg-white max-w-xl"
-        style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}
+        style={{ boxShadow: '0 2px 12px rgba(51,79,115,0.10)' }}
       >
-        <p className="font-semibold text-base mb-1" style={{ color: '#1d1d1f' }}>
+        <p className="font-semibold text-base mb-1" style={{ color: '#334F73' }}>
           Thank you — your message is on its way.
         </p>
-        <p className="text-sm" style={{ color: '#6e6e73' }}>
+        <p className="text-sm" style={{ color: '#334F73' }}>
           We will get back to you as soon as we can.
         </p>
       </div>
@@ -58,7 +58,7 @@ export function ContactForm() {
       </div>
       <Field name="organisation" label="Organisation / role" placeholder="e.g. cardiologist, hospital, investor" />
       <div className="flex flex-col gap-2">
-        <label htmlFor="message" className="text-xs font-medium" style={{ color: '#6e6e73' }}>
+        <label htmlFor="message" className="text-xs font-medium" style={{ color: '#334F73' }}>
           Message
         </label>
         <textarea
@@ -66,21 +66,21 @@ export function ContactForm() {
           name="message"
           rows={4}
           required
-          className="rounded-2xl px-4 py-3 text-sm bg-white border outline-none transition-colors focus:border-[#27B9B6]"
-          style={{ borderColor: '#e8e8ed', color: '#1d1d1f' }}
+          className="rounded-2xl px-4 py-3 text-sm bg-white border outline-none transition-colors focus:border-[#334F73]"
+          style={{ borderColor: 'rgba(51,79,115,0.3)', color: '#334F73' }}
         />
       </div>
       <div className="flex items-center gap-4 mt-1">
         <button
           type="submit"
           disabled={status === 'submitting'}
-          className="px-9 py-3.5 rounded-full font-medium text-sm text-white transition-opacity hover:opacity-80 disabled:opacity-50"
-          style={{ backgroundColor: '#E151B2' }}
+          className="px-9 py-3.5 rounded-full font-medium text-base transition-opacity hover:opacity-80 disabled:opacity-50"
+          style={{ backgroundColor: '#4FCBA6', color: '#334F73' }}
         >
           {status === 'submitting' ? 'Sending…' : 'Send message'}
         </button>
         {status === 'error' && (
-          <span className="text-sm" style={{ color: '#E151B2' }}>
+          <span className="text-sm font-medium" style={{ color: '#334F73' }}>
             Something went wrong. Please try again or email us directly.
           </span>
         )}
@@ -104,7 +104,7 @@ function Field({
 }) {
   return (
     <div className="flex flex-col gap-2">
-      <label htmlFor={name} className="text-xs font-medium" style={{ color: '#6e6e73' }}>
+      <label htmlFor={name} className="text-xs font-medium" style={{ color: '#334F73' }}>
         {label}
       </label>
       <input
@@ -113,8 +113,8 @@ function Field({
         type={type}
         required={required}
         placeholder={placeholder}
-        className="rounded-2xl px-4 py-3 text-sm bg-white border outline-none transition-colors focus:border-[#27B9B6]"
-        style={{ borderColor: '#e8e8ed', color: '#1d1d1f' }}
+        className="rounded-2xl px-4 py-3 text-sm bg-white border outline-none transition-colors focus:border-[#334F73]"
+        style={{ borderColor: 'rgba(51,79,115,0.3)', color: '#334F73' }}
       />
     </div>
   );

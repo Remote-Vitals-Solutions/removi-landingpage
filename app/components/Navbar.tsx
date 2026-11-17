@@ -47,7 +47,7 @@ export default function Navbar() {
         backgroundColor: solid ? 'rgba(255,255,255,0.85)' : 'rgba(255,255,255,0)',
         backdropFilter: solid ? 'blur(12px)' : 'none',
         WebkitBackdropFilter: solid ? 'blur(12px)' : 'none',
-        borderBottom: solid ? '1px solid rgba(0,0,0,0.08)' : '1px solid transparent',
+        borderBottom: solid ? '1px solid rgba(51,79,115,0.12)' : '1px solid transparent',
       }}
     >
       <div className="max-w-6xl mx-auto px-6">
@@ -68,10 +68,8 @@ export default function Navbar() {
                   <a
                     href={link.href}
                     aria-haspopup="true"
-                    className="text-sm font-medium transition-colors flex items-center gap-1"
-                    style={{ color: '#424245' }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = '#1d1d1f')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = '#424245')}
+                    className="text-sm font-medium flex items-center gap-1 hover:underline underline-offset-4"
+                    style={{ color: '#334F73' }}
                   >
                     {link.label}
                     <svg
@@ -92,19 +90,19 @@ export default function Navbar() {
                   <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3 invisible opacity-0 transition-opacity duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
                     <div
                       className="w-72 bg-white rounded-2xl p-2"
-                      style={{ boxShadow: '0 12px 32px rgba(0,0,0,0.12)', border: '1px solid rgba(0,0,0,0.06)' }}
+                      style={{ boxShadow: '0 12px 32px rgba(51,79,115,0.16)', border: '1px solid rgba(51,79,115,0.10)' }}
                     >
                       {link.children.map((child) => (
                         <a
                           key={child.href}
                           href={child.href}
                           onClick={(e) => e.currentTarget.blur()}
-                          className="block rounded-xl px-4 py-3 transition-colors hover:bg-[#f5f5f7]"
+                          className="block rounded-xl px-4 py-3 transition-colors hover:bg-[#F0F6FC]"
                         >
-                          <span className="block text-sm font-medium" style={{ color: '#1d1d1f' }}>
+                          <span className="block text-sm font-medium" style={{ color: '#334F73' }}>
                             {child.label}
                           </span>
-                          <span className="block text-xs mt-0.5" style={{ color: '#6e6e73' }}>
+                          <span className="block text-xs mt-0.5" style={{ color: '#334F73' }}>
                             {child.description}
                           </span>
                         </a>
@@ -116,10 +114,8 @@ export default function Navbar() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-sm font-medium transition-colors"
-                  style={{ color: '#424245' }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = '#1d1d1f')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = '#424245')}
+                  className="text-sm font-medium hover:underline underline-offset-4"
+                  style={{ color: '#334F73' }}
                 >
                   {link.label}
                 </a>
@@ -127,8 +123,8 @@ export default function Navbar() {
             )}
             <a
               href="#contact"
-              className="text-sm font-medium px-5 py-2 rounded-md text-white transition-opacity hover:opacity-90"
-              style={{ backgroundColor: '#27B9B6' }}
+              className="text-sm font-medium px-5 py-2 rounded-md transition-colors hover:bg-[#F0F6FC]"
+              style={{ color: '#334F73', border: '1.5px solid #334F73' }}
             >
               Get in touch
             </a>
@@ -143,29 +139,29 @@ export default function Navbar() {
           >
             <span
               className="block w-5 h-0.5 rounded-full transition-all duration-300"
-              style={{ backgroundColor: '#1d1d1f', transform: menuOpen ? 'translateY(8px) rotate(45deg)' : 'none' }}
+              style={{ backgroundColor: '#334F73', transform: menuOpen ? 'translateY(8px) rotate(45deg)' : 'none' }}
             />
             <span
               className="block w-5 h-0.5 rounded-full transition-all duration-300"
-              style={{ backgroundColor: '#1d1d1f', opacity: menuOpen ? 0 : 1 }}
+              style={{ backgroundColor: '#334F73', opacity: menuOpen ? 0 : 1 }}
             />
             <span
               className="block w-5 h-0.5 rounded-full transition-all duration-300"
-              style={{ backgroundColor: '#1d1d1f', transform: menuOpen ? 'translateY(-8px) rotate(-45deg)' : 'none' }}
+              style={{ backgroundColor: '#334F73', transform: menuOpen ? 'translateY(-8px) rotate(-45deg)' : 'none' }}
             />
           </button>
         </div>
 
         {/* Mobile menu panel */}
         {menuOpen && (
-          <nav className="md:hidden flex flex-col gap-1 pb-4 pt-1 border-t border-black/5">
+          <nav className="md:hidden flex flex-col gap-1 pb-4 pt-1 border-t border-[#334F73]/10">
             {links.map((link) => (
               <div key={link.href} className="flex flex-col">
                 <a
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
                   className="text-sm font-medium py-2.5 transition-opacity hover:opacity-60"
-                  style={{ color: '#1d1d1f' }}
+                  style={{ color: '#334F73' }}
                 >
                   {link.label}
                 </a>
@@ -175,7 +171,7 @@ export default function Navbar() {
                     href={child.href}
                     onClick={() => setMenuOpen(false)}
                     className="text-sm py-2 pl-4 transition-opacity hover:opacity-60"
-                    style={{ color: '#6e6e73' }}
+                    style={{ color: '#334F73' }}
                   >
                     {child.label}
                   </a>
@@ -185,8 +181,8 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={() => setMenuOpen(false)}
-              className="mt-2 text-sm font-medium px-5 py-2.5 rounded-md text-white text-center transition-opacity hover:opacity-90"
-              style={{ backgroundColor: '#27B9B6' }}
+              className="mt-2 text-sm font-medium px-5 py-2.5 rounded-md text-center transition-colors hover:bg-[#F0F6FC]"
+              style={{ color: '#334F73', border: '1.5px solid #334F73' }}
             >
               Get in touch
             </a>
