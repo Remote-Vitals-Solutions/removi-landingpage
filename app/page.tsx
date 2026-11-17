@@ -6,9 +6,9 @@ import { ContactForm } from './components/Forms';
 import { applications } from './applications';
 import wordmark from '../public/logo-wordmark.png';
 import asgerPhoto from '../public/team/asger.png';
-import nicolaiPhoto from '../public/team/nicolai.jpeg';
-import madsPhoto from '../public/team/mads.jpg';
-import madsOlsenPhoto from '../public/team/mads-olsen.jpg';
+import nicolaiPhoto from '../public/team/nicolai.png';
+import madsPhoto from '../public/team/mads.png';
+import madsOlsenPhoto from '../public/team/mads-olsen.png';
 import christianPhoto from '../public/team/christian.png';
 import dtuSkylabLogo from '../public/partners/dtu-skylab.png';
 import tuhLogo from '../public/partners/tuh.jpg';
@@ -54,24 +54,30 @@ function Hero() {
     <section className="min-h-screen flex flex-col items-center justify-center px-6 text-center bg-white">
       <div className="max-w-3xl flex flex-col items-center gap-7">
         <AnimateIn direction="fade" delay={0}>
-          <p className="text-xs font-medium uppercase tracking-[0.18em]" style={{ color: '#27B9B6' }}>
-            Remote Vitals Care
+          <p className="text-xs font-medium uppercase tracking-[0.18em]" style={{ color: '#334F73' }}>
+            Remote Vitals Solutions
           </p>
         </AnimateIn>
         <AnimateIn direction="up" delay={100}>
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight tracking-tight" style={{ color: '#1d1d1f' }}>
+          <h1 className="text-5xl md:text-7xl font-bold leading-tight tracking-tight" style={{ color: '#334F73' }}>
             The heart,<br />
-            <span style={{ color: '#27B9B6' }}>monitored continuously.</span>
+            monitored{' '}
+            <span
+              className="px-2"
+              style={{ backgroundColor: '#4FCBA6', color: '#334F73', borderRadius: '0.2em', boxDecorationBreak: 'clone', WebkitBoxDecorationBreak: 'clone' }}
+            >
+              continuously.
+            </span>
           </h1>
         </AnimateIn>
         <AnimateIn direction="up" delay={200}>
-          <p className="text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: '#6e6e73' }}>
+          <p className="text-lg md:text-xl leading-relaxed max-w-xl" style={{ color: '#334F73' }}>
             Removi develops a wrist-worn ECG device enabling continuous cardiac monitoring
             and early detection of atrial fibrillation — wherever the patient is.
           </p>
         </AnimateIn>
         <AnimateIn direction="up" delay={280}>
-          <p className="text-sm max-w-md" style={{ color: '#6e6e73' }}>
+          <p className="text-sm max-w-md" style={{ color: '#334F73' }}>
             In nearly 1 in 5 stroke patients, atrial fibrillation is only discovered
             during the hospitalisation that follows.
           </p>
@@ -79,8 +85,8 @@ function Hero() {
         <AnimateIn direction="up" delay={360}>
           <a
             href="#contact"
-            className="mt-2 px-9 py-3.5 rounded-full font-medium text-sm text-white transition-opacity hover:opacity-80"
-            style={{ backgroundColor: '#E151B2' }}
+            className="mt-2 px-9 py-3.5 rounded-full font-medium text-base transition-opacity hover:opacity-80"
+            style={{ backgroundColor: '#4FCBA6', color: '#334F73' }}
           >
             Get in touch
           </a>
@@ -101,7 +107,7 @@ function EkgLine() {
       <path
         d="M 0,30 L 60,30 C 70,30 72,22 82,22 C 92,22 94,30 100,30 L 114,30 L 118,34 L 124,2 L 130,42 L 136,30 L 152,30 C 162,30 165,19 177,19 C 189,19 192,30 202,30 L 332,30 C 342,30 344,22 354,22 C 364,22 366,30 372,30 L 386,30 L 390,34 L 396,2 L 402,42 L 408,30 L 424,30 C 434,30 437,19 449,19 C 461,19 464,30 474,30 L 600,30 C 610,30 612,22 622,22 C 632,22 634,30 640,30 L 654,30 L 658,34 L 664,2 L 670,42 L 676,30 L 692,30 C 702,30 705,19 717,19 C 729,19 732,30 742,30 L 800,30"
         fill="none"
-        stroke="#27B9B6"
+        stroke="#334F73"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -112,16 +118,16 @@ function EkgLine() {
 
 function Vision() {
   return (
-    <section className="py-32 px-6" style={{ backgroundColor: '#f5f5f7' }}>
+    <section className="py-32 px-6" style={{ backgroundColor: '#F0F6FC' }}>
       <div className="max-w-3xl mx-auto text-center">
         <AnimateIn direction="up">
-          <p className="text-xs font-medium uppercase tracking-[0.18em] mb-6" style={{ color: '#27B9B6' }}>
+          <p className="text-xs font-medium uppercase tracking-[0.18em] mb-6" style={{ color: '#334F73' }}>
             Vision
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-6" style={{ color: '#1d1d1f' }}>
+          <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-6" style={{ color: '#334F73' }}>
             Remote monitoring for the conditions that matter most.
           </h2>
-          <p className="leading-relaxed text-base" style={{ color: '#6e6e73' }}>
+          <p className="leading-relaxed text-base" style={{ color: '#334F73' }}>
             Right now, we&rsquo;re focused on detecting atrial fibrillation — one of the most
             common cardiac arrhythmias, and one that often goes unnoticed until real damage
             is done. It&rsquo;s where we start, not where we stop: our long-term aim is remote
@@ -139,13 +145,13 @@ function Product() {
     <section id="product" className="scroll-mt-24 py-32 px-6 bg-white">
       <div className="max-w-5xl mx-auto mb-20">
         <AnimateIn direction="up">
-          <p className="text-xs font-medium uppercase tracking-[0.18em] mb-6" style={{ color: '#27B9B6' }}>
+          <p className="text-xs font-medium uppercase tracking-[0.18em] mb-6" style={{ color: '#334F73' }}>
             The product
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-4 max-w-2xl" style={{ color: '#1d1d1f' }}>
+          <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-4 max-w-2xl" style={{ color: '#334F73' }}>
             Continuous ECG. Wrist-worn. Clinically actionable.
           </h2>
-          <p className="leading-relaxed max-w-xl text-base" style={{ color: '#6e6e73' }}>
+          <p className="leading-relaxed max-w-xl text-base" style={{ color: '#334F73' }}>
             Removi&rsquo;s device captures ECG data continuously and streams it securely to
             clinical staff — enabling remote monitoring and automated arrhythmia detection.
           </p>
@@ -161,13 +167,13 @@ function Applications() {
   return (
     <div id="applications" className="scroll-mt-24 max-w-5xl mx-auto mt-32">
       <AnimateIn direction="up">
-        <p className="text-xs font-medium uppercase tracking-[0.18em] mb-6" style={{ color: '#27B9B6' }}>
+        <p className="text-xs font-medium uppercase tracking-[0.18em] mb-6" style={{ color: '#334F73' }}>
           Applications
         </p>
-        <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-4 max-w-2xl" style={{ color: '#1d1d1f' }}>
+        <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-4 max-w-2xl" style={{ color: '#334F73' }}>
           One wearable, two clinical settings.
         </h2>
-        <p className="leading-relaxed max-w-xl mb-16 text-base" style={{ color: '#6e6e73' }}>
+        <p className="leading-relaxed max-w-xl mb-16 text-base" style={{ color: '#334F73' }}>
           At its core, Removi is a remote monitoring device: two wristbands that follow the
           patient continuously, wherever they are. The same device serves different clinical needs.
         </p>
@@ -178,23 +184,23 @@ function Applications() {
             <article
               id={app.id}
               className="scroll-mt-28 h-full rounded-3xl p-8 md:p-10 flex flex-col gap-5"
-              style={{ backgroundColor: '#f5f5f7' }}
+              style={{ backgroundColor: '#F0F6FC' }}
             >
               <div className="flex items-center gap-4">
                 <ApplicationIcon kind={app.icon} />
                 <span
-                  className="text-xs font-medium px-3 py-1 rounded-full bg-white"
-                  style={{ color: '#27B9B6' }}
+                  className="text-xs font-medium px-3 py-1 rounded-full"
+                  style={{ backgroundColor: '#8EC8F0', color: '#334F73' }}
                 >
                   {app.tag}
                 </span>
               </div>
-              <h3 className="text-2xl font-bold leading-snug" style={{ color: '#1d1d1f' }}>{app.title}</h3>
-              <p className="text-base leading-relaxed" style={{ color: '#6e6e73' }}>{app.body}</p>
+              <h3 className="text-2xl font-bold leading-snug" style={{ color: '#334F73' }}>{app.title}</h3>
+              <p className="text-base leading-relaxed" style={{ color: '#334F73' }}>{app.body}</p>
               <ul className="mt-auto pt-2 flex flex-col gap-2.5">
                 {app.points.map((point) => (
-                  <li key={point} className="flex items-start gap-3 text-sm" style={{ color: '#1d1d1f' }}>
-                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: '#27B9B6' }} />
+                  <li key={point} className="flex items-start gap-3 text-sm" style={{ color: '#334F73' }}>
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: '#334F73' }} />
                     {point}
                   </li>
                 ))}
@@ -203,7 +209,7 @@ function Applications() {
           </AnimateIn>
         ))}
       </div>
-      <p className="text-xs mt-10" style={{ color: '#6e6e73' }}>
+      <p className="text-xs mt-10" style={{ color: '#334F73' }}>
         Removi is in development. Intended uses are subject to clinical validation and regulatory approval.
       </p>
     </div>
@@ -213,14 +219,14 @@ function Applications() {
 function ApplicationIcon({ kind }: { kind: 'ecg' | 'home' }) {
   return (
     <div
-      className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center shrink-0"
-      style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}
+      className="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0"
+      style={{ backgroundColor: '#8EC8F0' }}
     >
       <svg
         viewBox="0 0 24 24"
         className="w-6 h-6"
         fill="none"
-        stroke="#27B9B6"
+        stroke="#334F73"
         strokeWidth="1.8"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -267,16 +273,16 @@ const techPillars = [
 
 function Technology() {
   return (
-    <section id="technology" className="scroll-mt-24 py-32 px-6" style={{ backgroundColor: '#f5f5f7' }}>
+    <section id="technology" className="scroll-mt-24 py-32 px-6" style={{ backgroundColor: '#F0F6FC' }}>
       <div className="max-w-5xl mx-auto">
         <AnimateIn direction="up">
-          <p className="text-xs font-medium uppercase tracking-[0.18em] mb-6" style={{ color: '#27B9B6' }}>
+          <p className="text-xs font-medium uppercase tracking-[0.18em] mb-6" style={{ color: '#334F73' }}>
             Technology
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-4 max-w-2xl" style={{ color: '#1d1d1f' }}>
+          <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-4 max-w-2xl" style={{ color: '#334F73' }}>
             How it works.
           </h2>
-          <p className="leading-relaxed max-w-xl mb-16 text-base" style={{ color: '#6e6e73' }}>
+          <p className="leading-relaxed max-w-xl mb-16 text-base" style={{ color: '#334F73' }}>
             From the patient’s wrist to the clinician’s screen — three steps that turn
             continuous heart signals into actionable insight.
           </p>
@@ -287,13 +293,13 @@ function Technology() {
             <AnimateIn key={s.step} direction="up" delay={i * 100}>
               <div
                 className="h-full rounded-3xl p-8 bg-white flex flex-col gap-4"
-                style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}
+                style={{ boxShadow: '0 2px 12px rgba(51,79,115,0.10)' }}
               >
-                <span className="text-xs font-medium uppercase tracking-[0.18em]" style={{ color: '#27B9B6' }}>
+                <span className="text-xs font-medium uppercase tracking-[0.18em]" style={{ color: '#334F73' }}>
                   {s.step}
                 </span>
-                <h3 className="text-xl font-bold" style={{ color: '#1d1d1f' }}>{s.title}</h3>
-                <p className="text-sm leading-relaxed" style={{ color: '#6e6e73' }}>{s.body}</p>
+                <h3 className="text-xl font-bold" style={{ color: '#334F73' }}>{s.title}</h3>
+                <p className="text-sm leading-relaxed" style={{ color: '#334F73' }}>{s.body}</p>
               </div>
             </AnimateIn>
           ))}
@@ -302,9 +308,9 @@ function Technology() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {techPillars.map((p, i) => (
             <AnimateIn key={p.title} direction="up" delay={i * 80}>
-              <div className="h-full rounded-2xl p-6 bg-white" style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}>
-                <p className="font-semibold text-sm mb-2" style={{ color: '#1d1d1f' }}>{p.title}</p>
-                <p className="text-xs leading-relaxed" style={{ color: '#6e6e73' }}>{p.body}</p>
+              <div className="h-full rounded-2xl p-6 bg-white" style={{ boxShadow: '0 2px 12px rgba(51,79,115,0.10)' }}>
+                <p className="font-semibold text-sm mb-2" style={{ color: '#334F73' }}>{p.title}</p>
+                <p className="text-xs leading-relaxed" style={{ color: '#334F73' }}>{p.body}</p>
               </div>
             </AnimateIn>
           ))}
@@ -370,7 +376,7 @@ function TeamCard({ person }: { person: TeamMember }) {
   return (
     <div
       className="relative h-full rounded-3xl p-6 bg-white flex flex-col items-center text-center gap-4"
-      style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}
+      style={{ boxShadow: '0 2px 12px rgba(51,79,115,0.10)' }}
     >
       {person.linkedin && (
         <a
@@ -379,7 +385,7 @@ function TeamCard({ person }: { person: TeamMember }) {
           rel="noopener noreferrer"
           aria-label={`${person.name} on LinkedIn`}
           className="absolute top-4 left-4 transition-opacity hover:opacity-60"
-          style={{ color: '#6e6e73' }}
+          style={{ color: '#334F73' }}
         >
           <LinkedInIcon className="w-5 h-5" />
         </a>
@@ -389,25 +395,25 @@ function TeamCard({ person }: { person: TeamMember }) {
         alt={person.name}
         width={64}
         height={64}
-        className="w-16 h-16 rounded-full object-cover border-2 border-black"
+        className="w-16 h-16 rounded-full object-cover border-2 border-[#334F73] bg-[#F0F6FC]"
       />
       <div>
-        <p className="font-semibold text-base" style={{ color: '#1d1d1f' }}>{person.name}</p>
+        <p className="font-semibold text-base" style={{ color: '#334F73' }}>{person.name}</p>
         {person.role && (
-          <p className="text-sm mt-1" style={{ color: '#6e6e73' }}>{person.role}</p>
+          <p className="text-sm mt-1" style={{ color: '#334F73' }}>{person.role}</p>
         )}
       </div>
       <span
         className="text-xs font-medium px-3 py-1 rounded-full"
-        style={{ backgroundColor: '#27B9B615', color: '#27B9B6' }}
+        style={{ backgroundColor: '#8EC8F0', color: '#334F73' }}
       >
         {person.tag}
       </span>
       {person.email && (
         <a
           href={`mailto:${person.email}`}
-          className="mt-auto text-sm break-all transition-opacity hover:opacity-60"
-          style={{ color: '#000000' }}
+          className="mt-auto text-sm break-all underline underline-offset-2 transition-opacity hover:opacity-60"
+          style={{ color: '#334F73' }}
         >
           {person.email}
         </a>
@@ -418,8 +424,8 @@ function TeamCard({ person }: { person: TeamMember }) {
 
 function TeamGroup({ title, members, columns }: { title: string; members: TeamMember[]; columns: string }) {
   return (
-    <div className="rounded-3xl p-6 md:p-8" style={{ backgroundColor: '#f5f5f7' }}>
-      <p className="text-xs uppercase tracking-widest mb-6 text-center" style={{ color: '#6e6e73' }}>
+    <div className="rounded-3xl p-6 md:p-8" style={{ backgroundColor: '#F0F6FC' }}>
+      <p className="text-xs uppercase tracking-widest mb-6 text-center" style={{ color: '#334F73' }}>
         {title}
       </p>
       <div className={`grid gap-6 ${columns}`}>
@@ -438,13 +444,13 @@ function Team() {
     <section id="team" className="scroll-mt-24 py-32 px-6 bg-white">
       <div className="max-w-5xl mx-auto">
         <AnimateIn direction="up">
-          <p className="text-xs font-medium uppercase tracking-[0.18em] mb-6" style={{ color: '#27B9B6' }}>
+          <p className="text-xs font-medium uppercase tracking-[0.18em] mb-6" style={{ color: '#334F73' }}>
             The team
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-4" style={{ color: '#1d1d1f' }}>
+          <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-4" style={{ color: '#334F73' }}>
             Built at DTU.
           </h2>
-          <p className="leading-relaxed max-w-xl mb-16 text-base" style={{ color: '#6e6e73' }}>
+          <p className="leading-relaxed max-w-xl mb-16 text-base" style={{ color: '#334F73' }}>
             We are a cross-disciplinary team from the Technical University of Denmark,
             combining expertise in medical technology, software engineering, and healthcare systems.
           </p>
@@ -481,16 +487,16 @@ const news = [
 
 function News() {
   return (
-    <section id="news" className="scroll-mt-24 py-32 px-6" style={{ backgroundColor: '#f5f5f7' }}>
+    <section id="news" className="scroll-mt-24 py-32 px-6" style={{ backgroundColor: '#F0F6FC' }}>
       <div className="max-w-5xl mx-auto">
         <AnimateIn direction="up">
-          <p className="text-xs font-medium uppercase tracking-[0.18em] mb-6" style={{ color: '#27B9B6' }}>
+          <p className="text-xs font-medium uppercase tracking-[0.18em] mb-6" style={{ color: '#334F73' }}>
             News &amp; updates
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-4 max-w-2xl" style={{ color: '#1d1d1f' }}>
+          <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-4 max-w-2xl" style={{ color: '#334F73' }}>
             Where we are right now.
           </h2>
-          <p className="leading-relaxed max-w-xl mb-16 text-base" style={{ color: '#6e6e73' }}>
+          <p className="leading-relaxed max-w-xl mb-16 text-base" style={{ color: '#334F73' }}>
             Follow our progress as we build toward continuous, clinically actionable cardiac monitoring.
           </p>
         </AnimateIn>
@@ -499,19 +505,19 @@ function News() {
             <AnimateIn key={item.title} direction="up" delay={i * 100}>
               <div
                 className="h-full rounded-3xl p-8 bg-white flex flex-col gap-4"
-                style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.06)' }}
+                style={{ boxShadow: '0 2px 12px rgba(51,79,115,0.10)' }}
               >
                 <div className="flex items-center gap-3">
                   <span
                     className="text-xs font-medium px-3 py-1 rounded-full"
-                    style={{ backgroundColor: '#27B9B615', color: '#27B9B6' }}
+                    style={{ backgroundColor: '#8EC8F0', color: '#334F73' }}
                   >
                     {item.tag}
                   </span>
-                  <span className="text-xs" style={{ color: '#6e6e73' }}>{item.date}</span>
+                  <span className="text-xs" style={{ color: '#334F73' }}>{item.date}</span>
                 </div>
-                <h3 className="text-lg font-bold leading-snug" style={{ color: '#1d1d1f' }}>{item.title}</h3>
-                <p className="text-sm leading-relaxed" style={{ color: '#6e6e73' }}>{item.body}</p>
+                <h3 className="text-lg font-bold leading-snug" style={{ color: '#334F73' }}>{item.title}</h3>
+                <p className="text-sm leading-relaxed" style={{ color: '#334F73' }}>{item.body}</p>
               </div>
             </AnimateIn>
           ))}
@@ -531,13 +537,13 @@ function Partners() {
     <section id="contact" className="scroll-mt-24 py-32 px-6 bg-white">
       <div className="max-w-5xl mx-auto">
         <AnimateIn direction="left">
-          <p className="text-xs font-medium uppercase tracking-[0.18em] mb-6" style={{ color: '#27B9B6' }}>
+          <p className="text-xs font-medium uppercase tracking-[0.18em] mb-6" style={{ color: '#334F73' }}>
             Partners & contact
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-4 max-w-2xl" style={{ color: '#1d1d1f' }}>
+          <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-4 max-w-2xl" style={{ color: '#334F73' }}>
             We are looking for clinical and institutional partners.
           </h2>
-          <p className="leading-relaxed max-w-xl mb-10 text-base" style={{ color: '#6e6e73' }}>
+          <p className="leading-relaxed max-w-xl mb-10 text-base" style={{ color: '#334F73' }}>
             If you are a clinician, hospital, investor, or research institution interested
             in remote cardiac monitoring — we would like to hear from you.
           </p>
@@ -547,15 +553,15 @@ function Partners() {
         <AnimateIn direction="up" delay={150}>
           <div
             className="mt-20 rounded-3xl p-12"
-            style={{ backgroundColor: '#f5f5f7' }}
+            style={{ backgroundColor: '#F0F6FC' }}
           >
-            <p className="text-xs uppercase tracking-widest mb-10 text-center" style={{ color: '#6e6e73' }}>Partners</p>
+            <p className="text-xs uppercase tracking-widest mb-10 text-center" style={{ color: '#334F73' }}>Partners</p>
             <div className="flex flex-wrap justify-center items-center gap-6">
               {partners.map((partner) => (
                 <div
                   key={partner.name}
                   className="bg-white rounded-2xl px-8 py-6 flex items-center gap-4"
-                  style={{ boxShadow: '0 2px 12px rgba(0,0,0,0.06)', minWidth: '180px' }}
+                  style={{ boxShadow: '0 2px 12px rgba(51,79,115,0.10)', minWidth: '180px' }}
                 >
                   <Image
                     src={partner.logo}
@@ -565,8 +571,8 @@ function Partners() {
                     className="object-contain rounded-xl"
                   />
                   <div className="text-left">
-                    <p className="font-semibold text-sm" style={{ color: '#1d1d1f' }}>{partner.name}</p>
-                    <p className="text-xs mt-0.5" style={{ color: '#6e6e73' }}>{partner.description}</p>
+                    <p className="font-semibold text-sm" style={{ color: '#334F73' }}>{partner.name}</p>
+                    <p className="text-xs mt-0.5" style={{ color: '#334F73' }}>{partner.description}</p>
                   </div>
                 </div>
               ))}
@@ -583,18 +589,18 @@ function Regulatory() {
     <section id="regulatory" className="scroll-mt-24 py-20 px-6 bg-white">
       <div className="max-w-3xl mx-auto text-center">
         <AnimateIn direction="up">
-          <p className="text-xs font-medium uppercase tracking-[0.18em] mb-5" style={{ color: '#27B9B6' }}>
+          <p className="text-xs font-medium uppercase tracking-[0.18em] mb-5" style={{ color: '#334F73' }}>
             Regulatory
           </p>
-          <h2 className="text-2xl md:text-3xl font-bold leading-tight mb-5" style={{ color: '#1d1d1f' }}>
+          <h2 className="text-2xl md:text-3xl font-bold leading-tight mb-5" style={{ color: '#334F73' }}>
             A medical device in development.
           </h2>
-          <p className="leading-relaxed text-sm md:text-base mb-4" style={{ color: '#6e6e73' }}>
+          <p className="leading-relaxed text-sm md:text-base mb-4" style={{ color: '#334F73' }}>
             Removi is developing a medical device, and we are early in that journey. We are
             actively working toward the regulatory approvals required to bring continuous
             cardiac monitoring safely to patients and clinicians.
           </p>
-          <p className="leading-relaxed text-sm md:text-base" style={{ color: '#6e6e73' }}>
+          <p className="leading-relaxed text-sm md:text-base" style={{ color: '#334F73' }}>
             Our device is currently in development and is not yet certified or approved for
             clinical use. We are committed to meeting the applicable medical device regulations
             and clinical standards as we progress, and we will not make claims about clinical
@@ -608,8 +614,8 @@ function Regulatory() {
 
 function Footer() {
   return (
-    <footer className="py-8 px-6 border-t border-[#e8e8ed]">
-      <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-3 text-xs" style={{ color: '#6e6e73' }}>
+    <footer className="py-8 px-6 border-t border-[#334F73]/15">
+      <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-3 text-xs" style={{ color: '#334F73' }}>
         <Image src={wordmark} alt="Removi" className="h-6 w-auto" />
         <span>Remote Vitals Solutions</span>
         <div className="flex items-center gap-4">
@@ -618,8 +624,8 @@ function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Removi on LinkedIn"
-            className="transition-opacity hover:opacity-60 flex items-center gap-1.5"
-            style={{ color: '#6e6e73' }}
+            className="transition-opacity hover:opacity-60 flex items-center gap-1.5 underline underline-offset-2"
+            style={{ color: '#334F73' }}
           >
             <LinkedInIcon className="w-4 h-4" />
             LinkedIn

@@ -51,13 +51,13 @@ export default function StickyProduct() {
             className="min-h-[60vh] flex flex-col justify-center py-16 transition-opacity duration-500"
             style={{ opacity: activeIndex === i ? 1 : 0.3 }}
           >
-            <p className="text-xs font-medium uppercase tracking-[0.18em] mb-4" style={{ color: '#27B9B6' }}>
+            <p className="text-xs font-medium uppercase tracking-[0.18em] mb-4" style={{ color: '#334F73' }}>
               {String(i + 1).padStart(2, '0')}
             </p>
-            <h3 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: '#1d1d1f' }}>
+            <h3 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: '#334F73' }}>
               {f.title}
             </h3>
-            <p className="text-base leading-relaxed" style={{ color: '#6e6e73' }}>
+            <p className="text-base leading-relaxed" style={{ color: '#334F73' }}>
               {f.body}
             </p>
           </div>
@@ -71,7 +71,7 @@ function ProductVisual({ activeIndex }: { activeIndex: number }) {
   return (
     <div
       className="rounded-3xl p-10 flex flex-col items-center justify-center gap-6"
-      style={{ backgroundColor: '#f5f5f7', minHeight: '420px' }}
+      style={{ backgroundColor: '#F0F6FC', minHeight: '420px' }}
     >
       <Image
         src={wristbands}
@@ -79,7 +79,7 @@ function ProductVisual({ activeIndex }: { activeIndex: number }) {
         sizes="(min-width: 1024px) 400px, (min-width: 768px) 40vw, 90vw"
         className="w-full h-auto"
       />
-      <p className="text-xs uppercase tracking-widest" style={{ color: '#6e6e73' }}>
+      <p className="text-xs uppercase tracking-widest" style={{ color: '#334F73' }}>
         Design concept
       </p>
 
@@ -90,7 +90,7 @@ function ProductVisual({ activeIndex }: { activeIndex: number }) {
             key={i}
             className="h-1 rounded-full transition-all duration-500"
             style={{
-              backgroundColor: '#27B9B6',
+              backgroundColor: '#334F73',
               width: activeIndex === i ? '24px' : '8px',
               opacity: activeIndex === i ? 1 : 0.3,
             }}
